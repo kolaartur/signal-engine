@@ -365,14 +365,14 @@ def check_signal():
         f"Signal Quality: {q}%\n"
         f"Confidence: ⭐⭐⭐⭐☆\n"
         f"Time: {now}"
-    )
+    ) 
+        
+# ================================
+# MAIN LOOP (BTC ENGINE)
+# ================================
 
-# ================================================================
-#  MAIN LOOP
-# ================================================================
 send("🟣 Engine 2 (BTC) — Started")
-send("Test OK — Engine is running.")
-send("TEST MESSAGE — Hello Artur!")
+send("Test OK — Engine is running")
 
 while True:
     sig = check_signal()
