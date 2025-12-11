@@ -1,3 +1,43 @@
+from datetime import datetime
+import pytz
+# ============================================================
+#  PROFESSIONAL SIGNAL FORMATTER (Locked Output Style)
+# ============================================================
+
+def format_signal(
+    side,          # "BUY STOP" or "SELL STOP"
+    symbol,        # "BTCUSD", "XAUUSD", etc.
+    entry,         # float
+    sl,            # float
+    tp,            # float
+    probability,   # int %
+    reliability,   # stars string: "⭐⭐⭐⭐⭐"
+    live_price     # float
+):
+    # Stockholm time
+    tz = pytz.timezone("Europe/Stockholm")
+    now = datetime.now(tz).strftime("%H:%M")
+
+    # Line 1: SIDE
+    line1 = f"{side}"
+
+    # Line 2: SYMBOL – ENTRY (Live: PRICE)
+    line2 = f"{symbol} – {entry:,.0f} (Live: {live_price:,.0f})"
+
+    # Entry / SL / TP
+    line3 = f"\nEntry: {entry:,.0f}"
+    line4 = f"SL: {sl:,.0f}"
+    line5 = f"TP: {tp:,.0f}"
+
+    # BE rule (always same logic)
+    line6 = f"BE: {entry:,.0f} → after +0.6R"
+
+    # Probability + Reliability + Time
+    line7 = f"\nProbability: {probability}%"
+    line8 = f"Reliability: {reliability}"
+    line9 = f"Time: {now}"
+
+    return f"{line1}\n{line2}\n\n{line3}\n{line4}\n{line5}\n{line6}\n\n{line7}\n{line8}\n{line9}"
 # ================================================================
 #  ENGINE 2 — BTC IMPULSE + CONTINUATION FLOW v1.1 (FINAL)
 #  LIMIT ONLY | 1 TP | 1 SL | SAFE RULES | 7 DAYS NON-STOP
@@ -6,7 +46,6 @@
 import time
 import math
 import requests
-from datetime import datetime
 
 # ================================================================
 #  TELEGRAM
