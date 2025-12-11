@@ -1,5 +1,8 @@
 from datetime import datetime
 import pytz
+import time
+import math
+import requests
 # ============================================================
 #  PROFESSIONAL SIGNAL FORMATTER (Locked Output Style)
 # ============================================================
@@ -42,10 +45,6 @@ def format_signal(
 #  ENGINE 2 — BTC IMPULSE + CONTINUATION FLOW v1.1 (FINAL)
 #  LIMIT ONLY | 1 TP | 1 SL | SAFE RULES | 7 DAYS NON-STOP
 # ================================================================
-
-import time
-import math
-import requests
 
 # ================================================================
 #  TELEGRAM
