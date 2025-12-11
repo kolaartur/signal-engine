@@ -372,6 +372,7 @@ def check_signal():
 # ================================================================
 send("🟣 Engine 2 (BTC) — Started")
 send("Test OK — Engine is running.")
+send("TEST MESSAGE — Hello Artur!")
 
 while True:
     sig = check_signal()
