@@ -486,9 +486,9 @@ def check_signal():
 # ============================================================
 #  MAIN LOOP (RENDER)
 # ============================================================
-send("🟡 Engine 1 started (Gold + Indices + Oil).")
-send("Test OK — Engine is running.")
-send("TEST MESSAGE — Hello Artur!")
+
+send("🟡 Engine 1 started (Gold + Indices + Oil)")
+send("Test OK — Engine is running")
 
 while True:
     if not market_open():
@@ -499,4 +499,4 @@ while True:
     if signal:
         send(signal)
 
-    time.sleep(15)
+    time.sleep(30)
