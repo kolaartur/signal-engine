@@ -488,6 +488,7 @@ def check_signal():
 # ============================================================
 send("🟡 Engine 1 started (Gold + Indices + Oil).")
 send("Test OK — Engine is running.")
+send("TEST MESSAGE — Hello Artur!")
 
 while True:
     if not market_open():
