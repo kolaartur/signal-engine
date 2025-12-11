@@ -371,6 +371,7 @@ def check_signal():
 #  MAIN LOOP
 # ================================================================
 send("🟣 Engine 2 (BTC) — Started")
+send("Test OK — Engine is running.")
 
 while True:
     sig = check_signal()
